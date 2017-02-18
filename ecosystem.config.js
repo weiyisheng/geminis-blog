@@ -31,11 +31,11 @@ module.exports = {
   deploy : {
     production : {
       user : "root",
-      host : "37.139.22.91",
+      host : "82.196.15.180",
       ref  : "origin/master",
       repo : "git@github.com:weiyisheng/geminis-blog.git",
-      path : "/home/root/www/production",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production"
+      path : "/var/www/production",
+      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
     },
     dev : {
       user : "node",
@@ -43,7 +43,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "git@github.com:repo.git",
       path : "/var/www/development",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env dev",
+      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env dev",
       env  : {
         NODE_ENV: "dev"
       }
