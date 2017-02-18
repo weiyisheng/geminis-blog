@@ -31,7 +31,7 @@ module.exports = {
   deploy : {
     production : {
       user : "root",
-      host : "82.196.15.180",
+      host : "37.139.22.91",
       ref  : "origin/master",
       repo : "git@github.com:weiyisheng/geminis-blog.git",
       path : "/var/www/production",
@@ -39,7 +39,7 @@ module.exports = {
     },
     dev : {
       user : "node",
-      host : "212.83.163.1",
+      host : "37.139.22.91",
       ref  : "origin/master",
       repo : "git@github.com:repo.git",
       path : "/var/www/development",
