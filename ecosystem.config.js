@@ -19,7 +19,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "git@github.com:weiyisheng/geminis-blog.git",
       path : "/var/www/production",
-      "post-deploy" : "npm install && webpack -p --config webpack.production.config.js && pm2 startOrRestart ecosystem.config.js --env production"
+      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
     },
     dev : {
       user : "node",
