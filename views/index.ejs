@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src='/app.js'></script>
+    <title>blog</title>
   </head>
   <body>
-    <div>welcome</div>
+    <div id="root"></div>
+    <% if(process.env.NODE_ENV === 'development') { %>
+  <!-- DEV -->
+      <script src="http://localhost:3000/webpack-dev-server.js"></script>
+      <script src="/js/devBundle.js"></script>
+    <% } else { %>
+      <!-- PRODUCTION -->
+      <script src="/dist/bundle.js"></script>
+    <% } %>
   </body>
 </html>

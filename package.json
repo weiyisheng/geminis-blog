@@ -3,17 +3,26 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "dev": "NODE_ENV=development node --harmony entry.js",
+    "devProd": "NODE_ENV=production node --harmony entry.js",
+    "stage": "NODE_ENV=production nohup supervisor -i node_modules --harmony entry.js &",
+    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js"
   },
   "dependencies": {
-    "body-parser": "~1.15.2",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.2.0",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
     "ejs": "~2.5.2",
     "express": "~4.14.0",
-    "less-middleware": "~2.2.0",
-    "morgan": "~1.7.0",
-    "react": "^15.4.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.0"
   }
 }

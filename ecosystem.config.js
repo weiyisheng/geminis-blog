@@ -1,33 +1,17 @@
 module.exports = {
-  /**
-   * Application configuration section
-   * http://pm2.keymetrics.io/docs/usage/application-declaration/
-   */
   apps : [
-
-    // First application
     {
-      name      : "API",
-      script    : "./bin/www",
+      name      : "Blog",
+      script    : "./entry",
       env: {
         COMMON_VARIABLE: "true"
       },
       env_production : {
         NODE_ENV: "production"
-      }
-    },
-
-    // // Second application
-    // {
-    //   name      : "WEB",
-    //   script    : "web.js"
-    // }
+      },
+      interpreter_args: "–harmony"
+    }
   ],
-
-  /**
-   * Deployment section
-   * http://pm2.keymetrics.io/docs/usage/deployment/
-   */
   deploy : {
     production : {
       user : "root",
@@ -35,7 +19,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "git@github.com:weiyisheng/geminis-blog.git",
       path : "/var/www/production",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
+      "post-deploy" : "npm install && webpack -p --config webpack.production.config.js && pm2 startOrRestart ecosystem.config.js --env production"
     },
     dev : {
       user : "node",
