@@ -18,7 +18,7 @@ module.exports = {
       host : "37.139.22.91",
       ref  : "origin/master",
       repo : "git@github.com:weiyisheng/geminis-blog.git",
-      path : "/var/www/production",
+      path : "/",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
     },
     dev : {
@@ -26,7 +26,7 @@ module.exports = {
       host : "37.139.22.91",
       ref  : "origin/master",
       repo : "git@github.com:repo.git",
-      path : "/var/www/development",
+      path : "/",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env dev",
       env  : {
         NODE_ENV: "dev"
