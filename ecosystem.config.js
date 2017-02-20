@@ -8,8 +8,7 @@ module.exports = {
       },
       env_production : {
         NODE_ENV: "production"
-      },
-      interpreter_args: "–harmony"
+      }
     }
   ],
   deploy : {
@@ -19,7 +18,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "git@github.com:weiyisheng/geminis-blog.git",
       path : "/var/www/production",
-      "post-deploy" : "npm install && pm2 startOrRestart http-server --name Blog -- dist -p 80 --env production"
+      "post-deploy" : "npm install && npm run deploy && pm2 startOrRestart ecosystem.config.js --env production"
     },
     dev : {
       user : "node",
