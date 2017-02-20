@@ -8,7 +8,7 @@ export default class Home extends React.Component {
     return (
       <div>
 
-        Home Page
+        Home Page !!! congraduation wei !!
       </div>
     )
   }
