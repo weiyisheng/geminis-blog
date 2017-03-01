@@ -52,12 +52,16 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        {
-          <Waterfall
-            items={this.state.data}
-            renderItem={(item, onMeasured) => <WaterfallItem data={item} onMeasured={onMeasured}/>}/>
-        }
-
+        <div style={{width: 200, height: 200, backgroundColor: "red"}}>
+          Other stuff....
+        </div>
+        <div style={{margin: "50px 70px"}}>
+          {
+            <Waterfall
+              items={this.state.data}
+              renderItem={(item, onMeasured) => <WaterfallItem data={item} onMeasured={onMeasured}/>}/>
+          }
+        </div>
         <div onClick={() => {this.setState({data: MockDataHuge(this.state.data)})}}>点击增加更多</div>
       </div>
     )
