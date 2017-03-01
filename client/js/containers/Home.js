@@ -2,8 +2,8 @@ import React from 'react'
 
 
 //components
-import Waterfall from 'Client/js/components/waterfall/Waterfall'
-import WaterfallItem from 'Client/js/components/waterfall/WaterfallItem'
+import Waterfall from 'react-waterfall-w'
+import WaterfallItem from 'Client/js/components/WaterfallItem'
 
 const MockData = ["http://new-img2.ol-img.com/985x695/117/362/li2sIrLbBDCQM.jpg",
   "http://pic1.win4000.com/wallpaper/c/53b102c707232.jpg",
@@ -52,9 +52,6 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        <div style={{width: 200, height: 200, backgroundColor: "red"}}>
-          Other stuff....
-        </div>
         <div style={{margin: "50px 70px"}}>
           {
             <Waterfall

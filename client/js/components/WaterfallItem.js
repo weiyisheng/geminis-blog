@@ -17,6 +17,12 @@ export default class WaterfallItem extends React.Component {
           <p className="url">
             {data}
           </p>
+          <p>
+            some<br />
+            other<br />
+            stuff<br />
+            .....<br />
+          </p>
         </div>
       </div>
     )
