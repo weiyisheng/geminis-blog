@@ -2,7 +2,7 @@ import express from 'express'
 import path from 'path'
 
 
-const APP_PORT = 3000
+const APP_PORT = 3009
 const compression = require('compression')
 
 

@@ -24,7 +24,7 @@ const compiler = webpack({
         ]
       }, {
         test: /\.less$/,
-        loaders: ['style', 'css', 'less'],
+        loaders: ['style-loader', 'css-loader', 'less-loader'],
       }
     ]
   },
