@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development node --harmony entry.js",
-    "devProd": "NODE_ENV=production node --harmony entry.js",
-    "stage": "NODE_ENV=production nohup supervisor -i node_modules --harmony entry.js &",
-    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js"
+    "dev": "webpack-dev-server --config webpack.config.js",
+    "stage": "NODE_ENV=production nohup supervisor -i node_modules --harmony server.js &",
+    "deploy": "NODE_ENV=production webpack --config webpack.config.js"
   },
   "dependencies": {
     "babel-core": "^6.23.1",
@@ -20,15 +19,21 @@
     "express": "~4.14.0",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
+    "material-ui": "^0.17.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-router": "^4.0.0",
+    "react-tap-event-plugin": "^2.0.1",
     "react-waterfall-w": "^1.0.7",
     "serve-favicon": "~2.3.0",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
   },
   "devDependencies": {
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.28.0",
     "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.10.1",
     "webpack-dev-server": "^2.4.0"
   }
 }

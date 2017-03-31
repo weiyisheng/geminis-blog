@@ -1,16 +1,16 @@
 
-import 'babel-polyfill'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+injectTapEventPlugin()
+
+require('../styles/common.less')
 require('../styles/main.less')
 
 import React from 'react'
 import ReactDom from 'react-dom'
 
-
-//containers
-import Home from 'Client/js/containers/Home'
-
-
-ReactDom.render(
-  <Home />,
-  document.getElementById('root')
-)
+import('Client/js/containers/Home').then(Home => {
+  ReactDom.render(
+    <Home.default />,
+    document.getElementById('root')
+  )
+})

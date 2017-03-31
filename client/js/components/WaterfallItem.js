@@ -12,7 +12,10 @@ export default class WaterfallItem extends React.Component {
 
     return (
       <div ref={e => this.box = e} className="item-box">
-        <img src={data} className="item-cover" onLoad={() => this.onImageLoaded()}/>
+        <img src={data}
+          className="item-cover"
+          onLoad={() => this.onImageLoaded()}
+          onError={() => {console.log(" ----- ");}}/>
         <div className="info-box">
           <p className="url">
             {data}

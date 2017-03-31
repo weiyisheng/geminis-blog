@@ -1,0 +1,95 @@
+.flex {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.flex-noshrink {
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+.flex-0, .flex-noshrink {
+  -webkit-box-flex: 1;
+  box-sizing: border-box;
+}
+
+/*layout*/
+
+[layout]>* {
+  min-height: initial;
+}
+.layout-row>.flex {
+  min-width: 0;
+}
+.layout-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.layout-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.layout, .layout-column, .layout-row {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.layout-align-center-center,
+.layout-align-end-center,
+.layout-align-space-around-center,
+.layout-align-space-between-center,
+.layout-align-start-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  max-width: 100%;
+}
+
+.layout-align-center,
+.layout-align-center-center,
+.layout-align-center-end,
+.layout-align-center-start,
+.layout-align-center-stretch {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.layout-align-start,
+.layout-align-start-center,
+.layout-align-start-end,
+.layout-align-start-start,
+.layout-align-start-stretch {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.layout-align-center-center>*,
+.layout-align-end-center>*,
+.layout-align-space-around-center>*,
+.layout-align-space-between-center>*,
+.layout-align-start-center>* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.flex-50 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+}
+
+.flex-50, .layout-row>.flex-50 {
+  max-width: 50%;
+  max-height: 100%;
+  box-sizing: border-box;
+}
