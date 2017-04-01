@@ -1,6 +1,9 @@
 require('../styles/common.less')
 require('../styles/login.less')
 
+import injectTapEventPlugin from 'react-tap-event-plugin'
+injectTapEventPlugin()
+
 import React from 'react'
 import ReactDom from 'react-dom'
 import FlatButton from 'material-ui/FlatButton'

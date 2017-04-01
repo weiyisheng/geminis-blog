@@ -1,7 +1,4 @@
 
-import injectTapEventPlugin from 'react-tap-event-plugin'
-injectTapEventPlugin()
-
 require('../styles/common.less')
 require('../styles/main.less')
 
