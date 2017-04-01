@@ -18,15 +18,15 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: path.join(__dirname, './views/login.ejs'),
     filename: isProd ? "./views/login.ejs" : "./views/login.html",
-    //chunks: ["vendor", "login"],
+    chunks: ["vendor", "login"],
+    inject: true
+  }),
+  new HtmlWebpackPlugin({
+    template: path.join(__dirname, './views/index.ejs'),
+    filename: isProd ? "./views/index.ejs" : "./views/index.html",
+    chunks: ["vendor", "main"],
     inject: true
   })
-  // new HtmlWebpackPlugin({
-  //   template: path.join(__dirname, './views/index.ejs'),
-  //   filename: isProd ? "./views/index.ejs" : "./views/index.html",
-  //   chunks: ["vendor", "main"],
-  //   inject: true
-  // })
 ]
 
 if(isProd) {
@@ -66,9 +66,9 @@ module.exports = {
   devtool: isProd ? 'source-map' : 'cheap-module-source-map',
   context: path.join(__dirname, './client'),
   entry: {
-    //main: './js/main.js',
+    main: './js/main.js',
     login: "./js/Login.js",
-    //vendor: ['react', 'react-dom', "material-ui"]
+    vendor: ['react', 'react-dom']
   },
   output: {
     path: path.join(__dirname, 'public','dist'),
