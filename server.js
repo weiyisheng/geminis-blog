@@ -8,7 +8,7 @@ var app = express()
 app.set('views', path.join(__dirname, 'public', 'dist', 'views'))
 app.set('view engine', 'ejs')
 
-app.use(express.static(path.resolve(__dirname, 'public'), { maxAge: 512 }))
+app.use(express.static(path.resolve(__dirname, 'public'), { maxAge: 1000 * 30 }))
 
 app.use(compression())
 
