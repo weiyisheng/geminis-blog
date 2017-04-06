@@ -58,7 +58,7 @@ module.exports = {
   entry: {
     main: './js/main.js',
     login: "./js/Login.js",
-    vendor: ['react', 'react-dom', 'material-ui']
+    vendor: ['react', 'react-dom']
   },
   output: {
     path: path.join(__dirname, 'public','dist'),
