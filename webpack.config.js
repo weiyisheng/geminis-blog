@@ -37,17 +37,7 @@ if(isProd) {
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false,
-        drop_console: true,
-        screw_ie8: true,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true,
+        warnings: false
       },
       output: {
         comments: false
@@ -68,7 +58,7 @@ module.exports = {
   entry: {
     main: './js/main.js',
     login: "./js/Login.js",
-    vendor: ['react', 'react-dom']
+    vendor: ['react', 'react-dom', 'material-ui']
   },
   output: {
     path: path.join(__dirname, 'public','dist'),
