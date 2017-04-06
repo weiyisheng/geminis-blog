@@ -59,7 +59,7 @@ export default class Home extends React.Component {
               renderItem={(item, onMeasured) => <WaterfallItem data={item} onMeasured={onMeasured}/>}/>
           }
         </div>
-        <div onClick={() => {this.setState({data: MockDataHuge(this.state.data)})}}>点击增加更多</div>
+        <div onClick={() => {this.setState({data: MockDataHuge(this.state.data)})}}>点击增加d更多</div>
       </div>
     )
   }
