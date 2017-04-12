@@ -1,26 +1,43 @@
-var express = require('express')
-var compression = require('compression')
-var path = require('path')
+var express = require('express');
+var compression = require('compression');
+var path = require('path');
+// var https = require('https');
+// var http = require('http');
+var fs = require('fs');
+var spdy = require('spdy');
 
-var APP_PORT = 3000
-var app = express()
+var options = {
+  key: fs.readFileSync(__dirname + '/keys/server.key'),
+  cert: fs.readFileSync(__dirname + '/keys/server.crt')
+};
 
-app.set('views', path.join(__dirname, 'public', 'dist', 'views'))
-app.set('view engine', 'ejs')
+var APP_PORT = 8443;
+var app = express();
 
-app.use(express.static(path.resolve(__dirname, 'public')))
+app.set('views', path.join(__dirname, 'public', 'dist', 'views'));
+app.set('view engine', 'ejs');
 
-app.use(compression())
+app.use(express.static(path.resolve(__dirname, 'public')));
+
+app.use(compression());
 
 
 app.use("/login", function(req, res, next) {
   res.render('login', {})
-})
+});
 
 app.use("/", function(req, res, next) {
   res.render('index', {})
-})
+});
 
-app.listen(APP_PORT, () => {
-  console.log(`App is now running on http://localhost:${APP_PORT}`)
-})
+spdy.createServer(options, app).listen(APP_PORT, () => {
+  console.log(`App is now running on https://localhost:${APP_PORT}`)
+});
+
+// http.createServer(app).listen(APP_PORT, () => {
+//   console.log(`App is now running on http://localhost:${APP_PORT}`)
+// });
+
+// app.listen(APP_PORT, () => {
+//   console.log(`App is now running on http://localhost:${APP_PORT}`)
+// })

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.js",
+    "stageTest": "NODE_ENV=production node server.js",
     "stage": "NODE_ENV=production nohup supervisor -i node_modules --harmony server.js &",
     "deploy": "NODE_ENV=production webpack --config webpack.config.js"
   },
@@ -17,6 +18,8 @@
     "css-loader": "^0.26.1",
     "ejs": "~2.5.2",
     "express": "~4.14.0",
+    "fs": "0.0.1-security",
+    "http2": "^3.3.6",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
     "material-ui": "^0.17.1",
@@ -26,6 +29,7 @@
     "react-tap-event-plugin": "^2.0.1",
     "react-waterfall-w": "^1.0.7",
     "serve-favicon": "~2.3.0",
+    "spdy": "^3.4.4",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
   },
