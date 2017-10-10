@@ -1,10 +1,8 @@
 var express = require('express');
 var compression = require('compression');
 var path = require('path');
-// var https = require('https');
-// var http = require('http');
+var http2 = require('spdy');
 var fs = require('fs');
-var spdy = require('spdy');
 
 var options = {
   key: fs.readFileSync(__dirname + '/keys/server.key'),
@@ -30,14 +28,6 @@ app.use("/", function(req, res, next) {
   res.render('index', {})
 });
 
-spdy.createServer(options, app).listen(APP_PORT, () => {
+http2.createServer(options, app).listen(APP_PORT, () => {
   console.log(`App is now running on https://localhost:${APP_PORT}`)
 });
-
-// http.createServer(app).listen(APP_PORT, () => {
-//   console.log(`App is now running on http://localhost:${APP_PORT}`)
-// });
-
-// app.listen(APP_PORT, () => {
-//   console.log(`App is now running on http://localhost:${APP_PORT}`)
-// })
